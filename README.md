@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+// Login
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Admin
 
-Currently, two official plugins are available:
+// Pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Homepage - login or dashboard depeding on login status
+2. Dashboard - where every dashboard component appears when clicked
+3. NotFound - error handling page
+4. Area Management
+5. Assignment history - list to show assignments
+6. Orders - to track and view orders
+7. PartnerList - to track availability and view partners
+8. PartnerRegistration - form to register partner -> should appear on the list
+9. Performance - random charts to show performance
+10. Shift scheduling - schedules
 
-## Expanding the ESLint configuration
+// Extra
+Key metric cards? charts?
+Active orders map?
+Partner availability status
+Recent assignments completed/ongoing/unassigned
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+// Features
 
-- Configure the top-level `parserOptions` property like this:
+--Partner related--
+Partner Registration
+View Partner List
+Edit Profile
+Area Management??
+Shift Scheduling??
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+--Order related--
+Order dashboard
+Status tracking
+Assignment History
+Performance metrics?? charts?

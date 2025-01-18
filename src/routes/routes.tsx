@@ -9,7 +9,7 @@ const router = createBrowserRouter([
     element: <Homepage />,
   },
   {
-    path: "/Dashboard",
+    path: "/Dashboard/*",
     element: <Dashboard />,
   },
   {
