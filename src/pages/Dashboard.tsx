@@ -16,7 +16,7 @@ const Dashboard = () => {
     <div className="flex relative">
       Navbar
       {isActiveMenu ? (
-        <div className="w-64 fixed dark:bg-gray-600 bg-white">
+        <div className="w-64 fixed dark:bg-white-400 bg-gray-100">
           <Sidebar />
         </div>
       ) : (

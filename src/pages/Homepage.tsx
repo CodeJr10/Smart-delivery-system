@@ -4,7 +4,7 @@ import Dashboard from "./Dashboard";
 import Login from "../auth/login";
 
 const Homepage = () => {
-  const isUserLoggedIn = false;
+  const isUserLoggedIn = true;
 
   return <div>{isUserLoggedIn ? <Dashboard /> : <Login />}</div>;
 };
