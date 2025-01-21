@@ -8,9 +8,10 @@ import Orders from "./Orders";
 import PartnerList from "./PartnerList";
 import ShiftScheduling from "./ShiftScheduling";
 import Sidebar from "../components/ui/Sidebar";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Dashboard = () => {
-  const isActiveMenu = true;
+  const { isActiveMenu } = useStateContext();
 
   return (
     <div className="flex relative">
@@ -20,7 +21,7 @@ const Dashboard = () => {
           <Sidebar />
         </div>
       ) : (
-        <div>NoSidebar</div>
+        <div></div>
       )}
       <Routes>
         {/* view orders */}
