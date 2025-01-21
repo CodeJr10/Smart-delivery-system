@@ -71,6 +71,7 @@ import TaskIcon from "@mui/icons-material/Task";
 type linkItems = {
   name: string;
   icon: ReactNode;
+  path: string;
 };
 
 type linkGroup = {
@@ -84,18 +85,22 @@ export const links: linkGroup[] = [
       {
         name: " Register Partner",
         icon: <PeopleAltIcon />,
+        path: "register-partner",
       },
       {
         name: "View Partner",
         icon: <RecentActorsIcon />,
+        path: "view-partner",
       },
       {
         name: "Availability Status",
         icon: <QuestionMarkIcon />,
+        path: "availability-status",
       },
       {
         name: "Shift Schedule",
         icon: <CalendarMonthIcon />,
+        path: "shift-schedule",
       },
     ],
   },
@@ -105,23 +110,28 @@ export const links: linkGroup[] = [
       {
         name: "Manage Orders",
         icon: <TaskIcon />,
+        path: "manage-orders",
       },
       {
         name: "Track Status",
         icon: <AddTaskIcon />,
+        path: "track-status",
       },
       {
         name: "Assignment History",
         icon: <HistoryIcon />,
+        path: "assign-history",
       },
 
       {
         name: "Area",
         icon: <MapIcon />,
+        path: "area",
       },
       {
-        name: "Overall Performance",
+        name: "Performance",
         icon: <AutoGraphIcon />,
+        path: "performance",
       },
     ],
   },

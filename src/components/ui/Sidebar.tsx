@@ -7,10 +7,16 @@ import { useStateContext } from "../../contexts/ContextProvider.tsx";
 // import { ReactNode } from "react";
 
 const Sidebar = () => {
-  const { isActiveMenu, setActiveMenu } = useStateContext();
+  const { isActiveMenu, setActiveMenu, screenSize } = useStateContext();
 
+  const handleCloseSideBar = () => {
+    if (screenSize !== undefined)
+      if (isActiveMenu && screenSize > 900) {
+        setActiveMenu(false);
+      }
+  };
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white  text-sm m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg  text-white bg-black text-sm m-2";
   const normalLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-sm text-black transition ease-in duration: 150ms hover:bg-white m-2";
 
@@ -26,10 +32,8 @@ const Sidebar = () => {
             <div className="flex justify-between">
               <Link
                 to="/"
-                onClick={() => {
-                  setActiveMenu(false);
-                }}
-                className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight text-slate-900"
+                onClick={handleCloseSideBar}
+                className="items-center gap-3 ml-3 mt-4 flex text-xl font-bold tracking-tight text-slate-900"
               >
                 <span>Rentkar</span>
               </Link>
@@ -45,15 +49,18 @@ const Sidebar = () => {
             {links.map((item) => {
               return (
                 <div key={item.title}>
-                  <p className="text-black m-3 mt-4 uppercase">{item.title}</p>
+                  <p className="text-black m-3 mt-4 font-normal uppercase">
+                    {item.title}
+                  </p>
                   {item.links.map((link) => {
                     return (
                       <NavLink
-                        to={`/${link.name}`}
+                        to={link.path}
                         key={link.name}
                         className={({ isActive }) =>
                           isActive ? activeLink : normalLink
                         }
+                        onClick={handleCloseSideBar}
                       >
                         {link.icon && (
                           <span className="text-lg">{link.icon}</span>

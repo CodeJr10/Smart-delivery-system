@@ -3,6 +3,8 @@ import { ReactNode, createContext, useContext, useState } from "react";
 interface StateContextType {
   isActiveMenu: boolean;
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  screenSize: number | undefined;
+  setScreenSize: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
 const StateContext = createContext<StateContextType | undefined>(undefined);
@@ -18,8 +20,11 @@ export const ContextProvider: React.FC<ContextProviderProps> = ({
   children,
 }) => {
   const [isActiveMenu, setActiveMenu] = useState(true);
+  const [screenSize, setScreenSize] = useState<number | undefined>(undefined);
   return (
-    <StateContext.Provider value={{ isActiveMenu, setActiveMenu }}>
+    <StateContext.Provider
+      value={{ isActiveMenu, setActiveMenu, screenSize, setScreenSize }}
+    >
       {children}
     </StateContext.Provider>
   );
